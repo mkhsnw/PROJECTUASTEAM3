@@ -1,0 +1,125 @@
+<!-- FILEPATH: /d:/Coding/proyek_enggal/soal1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Form Pengisian Nilai</title>
+  <style>
+    .question-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    body {
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mt-4">BAB 6</h1>
+      <h1 class="text-center mt-2">Kontruksi Rangka Batang</h1>
+      <div class="question-image"">
+          <img src=" assets/BAB 6 KASUS 3.png" alt="Gambar Soal" class="" width="600" style="margin-top: 100px;">
+      </div>
+      <form>
+        <div class="form-group" style="margin-top: 100px;">
+          <label for="name">jumlah simpul</label>
+          <input type="text" class="form-control" id="A" placeholder="Masukkan nama">
+        </div>
+        <div class="form-group">
+          <label for="score">jumlah batang</label>
+          <input type="number" class="form-control" id="B" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">jumlah reaksi</label>
+          <input type="number" class="form-control" id="C" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">jarak 1</label>
+          <input type="number" class="form-control" id="D" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">jarak 2</label>
+          <input type="number" class="form-control" id="E" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">tinggi</label>
+          <input type="number" class="form-control" id="I" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">beban 1</label>
+          <input type="number" class="form-control" id="F" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">beban 2</label>
+          <input type="number" class="form-control" id="G" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">beban 3</label>
+          <input type="number" class="form-control" id="H" placeholder="Masukkan nilai">
+        </div>
+
+        <button type="button" class="btn btn-outline-info" onclick="hitung()">Hitung</button>
+      </form>
+      <p id="vc" class="mt-4"></p>
+      <p id="v" class="mt-4"></p>
+      <p id="bd" class="mt-4"></p>
+      <p id="bd1" class="mt-4"></p>
+      <p id="fvda" class="mt-4"></p>
+      <p id="fbd" class="mt-4"></p>
+      <p id="fhd" class="mt-4"></p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function hitung() {
+      // Get the input values
+      const jumlah_simpul = parseFloat(document.getElementById("A").value);
+      const jumlah_batang = parseFloat(document.getElementById("B").value);
+      const jumlah_reaksi = parseFloat(document.getElementById("C").value);
+      const jarak_1 = parseFloat(document.getElementById("D").value);
+      const jarak_2 = parseFloat(document.getElementById("E").value);
+      const tinggi = parseFloat(document.getElementById("I").value);
+      const beban1 = parseFloat(document.getElementById("F").value);
+      const beban2 = parseFloat(document.getElementById("G").value);
+      const beban3 = parseFloat(document.getElementById("H").value);
+      // Calculate the result
+      const vc = ((((jarak_1 + jarak_2) * beban1) + (jarak_1 * beban2)) / (jarak_1 + jarak_2));
+      const v = (beban1) + (beban2) + (beban3) - vc - vc;
+      const bd = ((jarak_1 + jarak_2) * (jarak_1 + jarak_2)) + (tinggi * tinggi);
+      const bd1 = Math.sqrt(bd);
+      const fvda = beban1;
+      const fbd = (fvda - vc) / (tinggi / bd1);
+      const fhd = (-(jarak_1 + jarak_2) / bd1) * (fbd);
+
+      // Display results
+      document.getElementById("vc").innerHTML = `vc = ${vc}`;
+      document.getElementById("v").innerHTML = `v = ${v}`;
+      document.getElementById("bd").innerHTML = `bd = ${bd}`;
+      document.getElementById("bd1").innerHTML = `bd1 = ${bd1}`;
+      document.getElementById("fvda").innerHTML = `fvda = ${fvda}`;
+      document.getElementById("fbd").innerHTML = `fbd = ${fbd}`;
+      document.getElementById("fhd").innerHTML = `fhd = ${fhd}`;
+    }
+
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

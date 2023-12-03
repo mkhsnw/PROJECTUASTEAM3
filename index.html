@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  <style>
+    body{
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+    .card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+  font-weight: 600;
+}
+
+.card img{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.card-1{
+  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-2{
+   background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-3{
+   background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+} 
+
+.hover-1 {
+  --c: #1095c1;
+  /* the color */
+  --s: .15em;
+
+  line-height: 1.1em;
+  padding-bottom: calc(2.1*var(--s));
+  background:
+    conic-gradient(from 135deg at top, var(--c) 90deg, #0000 0) left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+    conic-gradient(from -45deg at bottom, var(--c) 90deg, #0000 0) left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0) 0/var(--_p, 0%) padding-box no-repeat;
+  transition: .5s;
+}
+
+.hover-1:hover {
+  --_p: 100%;
+  color: var(--c);
+}
+
+.nav-pills .nav-link {
+  color: black;
+}
+
+.animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+  </style>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4" style="color: white;">PROJECT TEAM 3</span>
+      </a>
+  
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link hover-1" style="color: white;" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link hover-1" style="color: white;">about</a></li>
+        <li class="nav-item"><a href="#" class="nav-link hover-1" style="color: white;">Soal</a></li>
+        <li class="nav-item"><a href="#" class="nav-link hover-1" style="color: white;">Mekanika</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <!-- bagian hero -->
+
+    <div class="container col-xxl-8 px-4 py-5 mb-4" data-aos="fade-up" data-aos-duration="1000">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="assets/hero3-removebg-preview.png" class="d-block mx-lg-auto img-fluid animated" alt="Bootstrap Themes" width="500"
+            height="300" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold lh-1 mb-3">TEAM 3</h1>
+          <p class="lead">Kami Merupakan Kelompok Berisikan 4 Orang Yang Dibentuk Guna Menyelesaikan Project UAS Mata Kuliah PEMOGRAMAN KOMPUTER.
+          Web Ini Diharapkan Dapat Memberikan Kemudahan Kepada Mahasiswa Mahasiswi Teknik Dalam Mengerjakan Soal Terkait
+          Mekanika Teknik.</p>
+        </div>
+      </div>
+    </div>
+    <!-- bagian content -->
+    <div class="container" data-aos="zoom-in-up" data-aos-duration="1000">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="about.html">
+          <div class="card card-1 mt-4">
+            <h3>ABOUT US</h3>
+            <p>Anggota Team 3</p>
+            <br>
+            <br>
+          </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="mekanika.html">
+          <div class="card card-2 mt-4">
+            <h3>MEKANIKA TEKNIK</h3>
+            <p>Menjelaskan Singkat Tentang Mekanika Teknik</p>
+            <br>
+          </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="test.html">
+          <div class="card card-3 mt-4">
+            <h3>SOAL-SOAL</h3>
+            <p>Berisi Soal-Soal Untuk Melatih Dalam Mengerjakan Soal-Soal Mekanika Teknik </p>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

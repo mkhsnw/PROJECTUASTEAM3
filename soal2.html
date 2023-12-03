@@ -1,0 +1,111 @@
+<!-- FILEPATH: /d:/Coding/proyek_enggal/soal1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Form Pengisian Nilai</title>
+  <script src="js/bab4kasus7.js"></script>
+  <style>
+    .question-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    body {
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mt-4">BAB 4</h1>
+      <h1 class="text-center mt-2">APLIKASI KONSEP KESEIMBANGAN</h1>
+      <div class="question-image"">
+          <img src=" assets/BAB 4 KASUS 8.png" alt="Gambar Soal" class="" width="750" style="margin-top: 100px;">
+      </div>
+      <form>
+        <div class="form-group" style="margin-top: 100px;">
+          <label for="name">Mc</label>
+          <input type="number" class="form-control" id="MC" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">F2</label>
+          <input type="number" class="form-control" id="F2" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">F3</label>
+          <input type="number" class="form-control" id="F3" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRvb</label>
+          <input type="number" class="form-control" id="LRvb" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF2A</label>
+          <input type="number" class="form-control" id="LF2A" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF3A</label>
+          <input type="number" class="form-control" id="LF3A" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRvA</label>
+          <input type="number" class="form-control" id="LRVA" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF2B</label>
+          <input type="number" class="form-control" id="LF2B" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF3B</label>
+          <input type="number" class="form-control" id="LF3B" placeholder="Masukkan nilai">
+        </div>
+        <button type="button" class="btn btn-outline-info" onclick="hitung()">Hitung</button>
+      </form>
+      <p id="ftotal" class="mt-4"></p>
+      <p id="RvA" class="mt-4"></p>
+      <p id="RvB" class="mt-4"></p>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    function hitung() {
+      var MC = parseInt(document.getElementById("MC").value); 
+      var F2 = parseInt(document.getElementById("F2").value) ;
+      var F3 = parseInt(document.getElementById("F3").value) ;
+      var LRvb = parseInt(document.getElementById("LRvb").value);
+      var LF2A = parseInt(document.getElementById("LF2A").value);
+      var LF3A = parseInt(document.getElementById("LF3A").value);
+      var LRVA = parseInt(document.getElementById("LRVA").value);
+      var LF2B = parseInt(document.getElementById("LF2B").value);
+      var LF3B = parseInt(document.getElementById("LF3B").value);
+
+      const RvB = ((F3 * LF3A) + (F2 * LF2A) - (MC) ) / LRvb;
+      const RvA = ((F2 * LF2B) + (F3 * LF3B) + (MC) ) / LRVA;
+
+      
+      document.getElementById("RvA").innerHTML = "RvA = " + RvA;
+      document.getElementById("RvB").innerHTML = "RvB = " + RvB;
+    }
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

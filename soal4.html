@@ -1,0 +1,133 @@
+<!-- FILEPATH: /d:/Coding/proyek_enggal/soal1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Form Pengisian Nilai</title>
+  <style>
+    .question-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    body {
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mt-4">BAB 5</h1>
+      <h1 class="text-center mt-2">STRUKTUR PORTAL</h1>
+      <div class="question-image"">
+          <img src=" assets/BAB 5 KASUS 1.png" alt="Gambar Soal" class="" width="600" style="margin-top: 100px;">
+      </div>
+      <form>
+        <div class="form-group" style="margin-top: 100px;">
+          <label for="name">Q</label>
+          <input type="text" class="form-control" id="Q" placeholder="Masukkan nama">
+        </div>
+        <div class="form-group">
+          <label for="score">RhB</label>
+          <input type="number" class="form-control" id="RHB" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">RE</label>
+          <input type="number" class="form-control" id="RE" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRvF</label>
+          <input type="number" class="form-control" id="LRVF" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRhB</label>
+          <input type="number" class="form-control" id="LRHB" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQ</label>
+          <input type="number" class="form-control" id="LQ" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQ1</label>
+          <input type="number" class="form-control" id="LQ1" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRE</label>
+          <input type="number" class="form-control" id="LRE" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRvA</label>
+          <input type="number" class="form-control" id="LRVA" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRHA</label>
+          <input type="number" class="form-control" id="LRHA" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRhB2</label>
+          <input type="number" class="form-control" id="LRHB2" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQ2</label>
+          <input type="number" class="form-control" id="LQ2" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LRE2</label>
+          <input type="number" class="form-control" id="LRE2" placeholder="Masukkan nilai">
+        </div>
+        <button type="button" class="btn btn-outline-info" onclick="hitung()">Hitung</button>
+      </form>
+      <p id="rvf" class="mt-4"></p>
+      <p id="rha" class="mt-4"></p>
+      <p id="rva" class="mt-4"></p>
+      <p id="kondisi" class="mt-4"></p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function hitung() {
+    const Q = parseFloat(document.getElementById("Q").value);
+    const RhB = parseFloat(document.getElementById("RHB").value);
+    const RE = parseFloat(document.getElementById("RE").value);
+    const LRvF = parseFloat(document.getElementById("LRVF").value);
+    const LRhB = parseFloat(document.getElementById("LRHB").value);
+    const LQ = parseFloat(document.getElementById("LQ").value);
+    const LQ1 = parseFloat(document.getElementById("LQ1").value);
+    const LRE = parseFloat(document.getElementById("LRE").value);
+    const LRvA = parseFloat(document.getElementById("LRVA").value);
+    const LRHA = parseFloat(document.getElementById("LRHA").value);
+    const LRHB2 = parseFloat(document.getElementById("LRHB2").value);
+    const LQ2 = parseFloat(document.getElementById("LQ2").value);
+    const LRE2 = parseFloat(document.getElementById("LRE2").value);
+
+    const rvf = ((RhB * LRhB) + (Q * LQ * LQ1) + (RE * LRE)) / LRvF;
+    const rha = RhB;
+    const rva = ((rha * LRHA) - (RhB * LRHB2) + (Q * LQ * LQ2) - (RE * LRE2)) / LRvA;
+    const check = rva + rvf - (Q * LQ) + RE;
+    const kondisi = check == 0 ? "Benar" : "Salah";
+
+    document.getElementById("rvf").innerHTML = "RvF = " + rvf;
+    document.getElementById("rha").innerHTML = "RhA = " + rha;
+    document.getElementById("rva").innerHTML = "RvA = " + rva;
+    }
+
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

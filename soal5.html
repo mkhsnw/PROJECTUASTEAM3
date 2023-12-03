@@ -1,0 +1,152 @@
+<!-- FILEPATH: /d:/Coding/proyek_enggal/soal1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Form Pengisian Nilai</title>
+  <style>
+    .question-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    body {
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mt-4">BAB 5</h1>
+      <h1 class="text-center mt-2">STRUKTUR PORTAL</h1>
+      <div class="question-image"">
+          <img src=" assets/BAB 5 KASUS 2.png" alt="Gambar Soal" class="" width="600" style="margin-top: 100px;">
+      </div>
+      <form>
+        <div class="form-group" style="margin-top: 100px;">
+          <label for="name">QA</label>
+          <input type="text" class="form-control" id="A" placeholder="Masukkan nama">
+        </div>
+        <div class="form-group">
+          <label for="score">1QA</label>
+          <input type="number" class="form-control" id="B" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">QB</label>
+          <input type="number" class="form-control" id="C" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">1QB</label>
+          <input type="number" class="form-control" id="D" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">F1</label>
+          <input type="number" class="form-control" id="E" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">F2</label>
+          <input type="number" class="form-control" id="F" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">M</label>
+          <input type="number" class="form-control" id="M" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">1RVB</label>
+          <input type="number" class="form-control" id="G" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQA1</label>
+          <input type="number" class="form-control" id="H" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF2A</label>
+          <input type="number" class="form-control" id="I" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQB1</label>
+          <input type="number" class="form-control" id="J" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF1A</label>
+          <input type="number" class="form-control" id="K" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">1RVA</label>
+          <input type="number" class="form-control" id="L" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQA2</label>
+          <input type="number" class="form-control" id="M" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF2B</label>
+          <input type="number" class="form-control" id="N" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LQB2</label>
+          <input type="number" class="form-control" id="O" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">LF1B</label>
+          <input type="number" class="form-control" id="P" placeholder="Masukkan nilai">
+        </div>
+        <button type="button" class="btn btn-outline-info" onclick="hitung()">Hitung</button>
+      </form>
+      <p id="rva" class="mt-4"></p>
+      <p id="rha" class="mt-4"></p>
+      <p id="rvb" class="mt-4"></p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function hitung() {
+
+      const QA = parseFloat(document.getElementById("A").value);
+      const QA1 = parseFloat(document.getElementById("B").value);
+      const QB = parseFloat(document.getElementById("C").value);
+      const QB1 = parseFloat(document.getElementById("D").value);
+      const F1 = parseFloat(document.getElementById("E").value);
+      const F2 = parseFloat(document.getElementById("F").value);
+      const M = parseFloat(document.getElementById("M").value);
+      const RVB1 = parseFloat(document.getElementById("G").value);
+      const LQA1 = parseFloat(document.getElementById("H").value);
+      const LF2A = parseFloat(document.getElementById("I").value);
+      const LQB1 = parseFloat(document.getElementById("J").value);
+      const LF1A = parseFloat(document.getElementById("K").value);
+      const RVA1 = parseFloat(document.getElementById("L").value);
+      const LQA2 = parseFloat(document.getElementById("M").value);
+      const LF2B = parseFloat(document.getElementById("N").value);
+      const LQB2 = parseFloat(document.getElementById("O").value);
+      const LF1B = parseFloat(document.getElementById("P").value);
+
+
+      const rha = F1 - (QA * QA1);
+      const rvb = ((- (QA * QA1 * LQA1) + (F2 * LF2A) + M + (QB * QB1 * LQB1) + (F1 * LF1A)) / (RVB1));
+      const rva = ((- (QA * QA1 * LQA2) + (F2 * LF2B) + M + (QB * QB1 * LQB2) + (F1 * LF1B)) / (RVA1));
+
+        document.getElementById("rva").innerHTML = "RvA = " + rva;
+        document.getElementById("rha").innerHTML = "RhA = " + rha;
+        document.getElementById("rvb").innerHTML = "RvB = " + rvb;
+      }
+
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!-- FILEPATH: /d:/Coding/proyek_enggal/soal1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Form Pengisian Nilai</title>
+  <script src="js/bab4kasus7.js"></script>
+  <style>
+    .question-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+    body{
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+ 
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mt-4">BAB 4</h1>
+        <h1 class="text-center mt-2">APLIKASI KONSEP KESEIMBANGAN</h1>
+        <div class="question-image"">
+          <img src="assets/BAB 4 KASUS 7.png" alt="Gambar Soal" class="" width="750" style="margin-top: 100px;">
+        </div>
+        <form>
+          <div class="form-group" style="margin-top: 100px;">
+            <label for="name">Q</label>
+            <input type="number" class="form-control" id="Q" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LQ</label>
+            <input type="number" class="form-control" id="LQ" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">F1</label>
+            <input type="number" class="form-control" id="F1" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">F2</label>
+            <input type="number" class="form-control" id="F2" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LRvb</label>
+            <input type="number" class="form-control" id="LRvb" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LQ1</label>
+            <input type="number" class="form-control" id="LQ1" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LQ2</label>
+            <input type="number" class="form-control" id="LQ2" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LF1A</label>
+            <input type="number" class="form-control" id="LF1A" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LF2A</label>
+            <input type="number" class="form-control" id="LF2A" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LF1B</label>
+            <input type="number" class="form-control" id="LF1B" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LF2B</label>
+            <input type="number" class="form-control" id="LF2B" placeholder="Masukkan nilai">
+          </div>
+          <div class="form-group">
+            <label for="score">LRvA</label>
+            <input type="number" class="form-control" id="LRvA" placeholder="Masukkan nilai">
+          </div>
+          <button type="button" class="btn btn-outline-info" onclick="hitung()" >Hitung</button>
+        </form>
+        <p id="ftotal" class="mt-4"></p>
+        <p id="RvA" class="mt-4"></p>
+        <p id="RvB" class="mt-4"></p>
+        
+      </div>
+      
+    </div>
+    
+    <script type="text/javascript">
+      function hitung() {
+          const Q = parseInt(document.getElementById("Q").value);
+          const LQ = parseInt(document.getElementById("LQ").value);
+          const F1 = parseInt(document.getElementById("F1").value);
+          const F2 = parseInt(document.getElementById("F2").value);
+          const LQ2 = parseInt(document.getElementById("LQ2").value);
+
+
+          // Hitung F total
+          const Ftotal = Q * LQ;
+
+          const LQ1 = parseInt(document.getElementById("LQ1").value);
+
+          // Hitung RvA dan RvB
+          const LRvb = parseInt(document.getElementById("LRvb").value);
+          const LRva = parseInt(document.getElementById("LRvA").value);
+
+          const LF1A = parseInt(document.getElementById("LF1A").value);
+          const LF2A = parseInt(document.getElementById("LF2A").value);
+          const LF1B = parseInt(document.getElementById("LF1B").value);
+          const LF2B = parseInt(document.getElementById("LF2B").value);
+
+          const RvB = ((F1 * LF1A) + (F2 * LF2A) + (Q * LQ * LQ1)) / LRva;
+          const RvA = ((F1 * LF1B) + (F2 * LF2B) + (Q * LQ * LQ2)) / LRvb;
+
+          // Tampilkan hasil perhitungan pada elemen HTML
+          document.getElementById('ftotal').innerHTML = `Ftotal = ${Ftotal}`;
+          document.getElementById('RvA').innerHTML = `RvA = ${RvA}`;
+          document.getElementById('RvB').innerHTML = `RvB = ${RvB}`;
+
+          console.log(Ftotal);
+          console.log(RvA);
+          console.log(RvB);
+        }
+    </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+</body>
+
+</html>

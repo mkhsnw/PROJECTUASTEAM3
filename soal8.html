@@ -1,0 +1,132 @@
+<!-- FILEPATH: /d:/Coding/proyek_enggal/soal1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Form Pengisian Nilai</title>
+  <style>
+    .question-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    body {
+      background-color: #26577c;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mt-4">BAB 6</h1>
+      <h1 class="text-center mt-2">Kontruksi Rangka Batang</h1>
+      <div class="question-image"">
+          <img src=" assets/BAB 6 KASUS 2.png" alt="Gambar Soal" class="" width="600" style="margin-top: 100px;">
+      </div>
+      <form>
+        <div class="form-group" style="margin-top: 100px;">
+          <label for="name">jumlah simpul</label>
+          <input type="text" class="form-control" id="A" placeholder="Masukkan nama">
+        </div>
+        <div class="form-group">
+          <label for="score">jumlah batang</label>
+          <input type="number" class="form-control" id="B" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">jumlah reaksi</label>
+          <input type="number" class="form-control" id="C" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">jarak 1</label>
+          <input type="number" class="form-control" id="D" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">jarak 2</label>
+          <input type="number" class="form-control" id="E" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">tinggi</label>
+          <input type="number" class="form-control" id="I" placeholder="Masukkan nilai">
+        </div>
+        <div class="form-group">
+          <label for="score">beban</label>
+          <input type="number" class="form-control" id="F" placeholder="Masukkan nilai">
+        </div>
+
+        <button type="button" class="btn btn-outline-info" onclick="hitung()">Hitung</button>
+      </form>
+      <p id="htotal" class="mt-4"></p>
+      <p id="vc" class="mt-4"></p>
+      <p id="va" class="mt-4"></p>
+      <p id="ha" class="mt-4"></p>
+      <p id="ab" class="mt-4"></p>
+      <p id="ab1" class="mt-4"></p>
+      <p id="bc" class="mt-4"></p>
+      <p id="bc1" class="mt-4"></p>
+      <p id="fab" class="mt-4"></p>
+      <p id="fhac" class="mt-4"></p>
+      <p id="fhb" class="mt-4"></p>
+      <p id="fvc" class="mt-4"></p>
+      <p id="fhc" class="mt-4"></p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function hitung() {
+      // Get the input values
+      const jumlah_simpul = document.getElementById("A").value;
+      const jumlah_batang = document.getElementById("B").value;
+      const jumlah_reaksi = document.getElementById("C").value;
+      const jarak_1 = document.getElementById("D").value;
+      const jarak_2 = document.getElementById("E").value;
+      const tinggi = document.getElementById("F").value;
+      const beban = document.getElementById("I").value;
+      // Calculate the result
+    const h_total = jarak_1 + jarak_2;
+    const vc = ((beban * tinggi) / h_total);
+    const va = -vc;
+    const ha = beban;
+    const ab = (tinggi * tinggi) + (jarak_1 * jarak_1);
+    const ab1 = Math.sqrt(ab);
+    const bc = (tinggi * tinggi) + (jarak_2 * jarak_2);
+    const bc1 = Math.sqrt(bc);
+    const fab = (vc) / (tinggi) / (ab1);
+    const fhac = (beban) - ((jarak_1 / ab1) * fab);
+    const fhb = (fhac) / (jarak_2/bc1);
+    const fvc = ((vc) - (tinggi / bc) * fhb);
+    const fhc = ((fhac) - (jarak_2 / bc1) * fhb);
+      // Display results
+      document.getElementById("htotal").innerHTML = "h total = " + h_total;
+      document.getElementById("vc").innerHTML = "vc = " + vc;
+      document.getElementById("va").innerHTML = "va = " + va;
+      document.getElementById("ha").innerHTML = "ha = " + ha;
+      document.getElementById("ab").innerHTML = "ab = " + ab;
+      document.getElementById("ab1").innerHTML = "ab1 = " + ab1;
+      document.getElementById("bc").innerHTML = "bc = " + bc;
+      document.getElementById("bc1").innerHTML = "bc1 = " + bc1;
+      document.getElementById("fab").innerHTML = "fab = " + fab;
+      document.getElementById("fhac").innerHTML = "fhac = " + fhac;
+      document.getElementById("fhb").innerHTML = "fhb = " + fhb;
+      document.getElementById("fvc").innerHTML = "fvc = " + fvc;
+      document.getElementById("fhc").innerHTML = "fhc = " + fhc;
+    }
+
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
